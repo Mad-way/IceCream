@@ -22,7 +22,7 @@ public class Isecreamhold : MonoBehaviour
         {
             iceCream.transform.position = holdPoint.transform.position;
         }
-        else if (!hold && iceCream != null)
+        else if (!hold && iceCream != null && Input.GetKeyDown(KeyCode.E))
         {
             iceCream.transform.position = iceCream.transform.position;
         }

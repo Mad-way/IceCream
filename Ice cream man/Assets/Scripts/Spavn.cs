@@ -6,18 +6,28 @@ public class Spavn : MonoBehaviour
 {
     public GameObject spawnPoint;
     public GameObject objToSpawn;
-    // Start is called before the first frame update
+
     void Start()
     {
-        
+        StartCoroutine(SpawnCD());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator SpawnCD()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            Instantiate(objToSpawn, spawnPoint.transform.position, Quaternion.identity);
-        }
+        yield return new WaitForSeconds(2);
+        Vector2 pos = new Vector2(transform.position.x, transform.position.y);
+        Instantiate(objToSpawn, spawnPoint.transform.position, Quaternion.identity);
     }
+
+
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.tag == "Truff")
+        {
+            StartCoroutine(SpawnCD());
+        }
+
+    }
+
 }
