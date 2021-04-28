@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        //sr = GetComponent<SpriteRenderer>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -39,6 +39,8 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, moveVelocity.y * speed);
     }
 
+
+
     /*void Flip()
     {
         if (moveVelocity.x > 0)
@@ -49,8 +51,9 @@ public class Player : MonoBehaviour
         {
             sr.flipX = true;
         }
-        //sr.flipX = moveVelocity.x < 0;
+        sr.flipX = moveVelocity.x < 0;
     }
+    /*
     void Reflect()
     {
         if ((moveVelocity.x > 0 && !faceRight) || (moveVelocity.x < 0 && faceRight))
@@ -59,5 +62,5 @@ public class Player : MonoBehaviour
             faceRight = !faceRight;
         }
     }
-    */
+*/
 }
