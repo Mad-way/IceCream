@@ -1,42 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Isecreamhold : MonoBehaviour
 {
-    public bool hold;
     public float distance;
     public Transform holdPoint;
-    public float throwObj;
     public GameObject iceCream;
+    public GameObject myIceCream;
+
+
 
 
     void Start()
     {
+        myIceCream = null;
+        iceCream = null;
 
     }
 
     void Update()
     {
-        if (hold && iceCream != null)
+        if (myIceCream != null)
         {
-            iceCream.transform.position = holdPoint.transform.position;
-        }
-        else if (!hold && iceCream != null && Input.GetKeyDown(KeyCode.E))
-        {
-            iceCream.transform.position = iceCream.transform.position;
-        }
-        if (Input.GetKeyDown(KeyCode.E) && iceCream != null)
-        {
-            if (!hold && Vector2.Distance(holdPoint.transform.position, iceCream.transform.position) < distance && iceCream.CompareTag("Truff"))
+            myIceCream.transform.position = holdPoint.transform.position;
+            if (Input.GetKey(KeyCode.F))
             {
-                hold = true;
-            }
-            else if (hold)
-            {
-                hold = false;
-            }
+                Instantiate(myIceCream, transform.position, Quaternion.identity);
+                Destroy(myIceCream);
+                myIceCream = null;
 
+            }
+        }
+        if (myIceCream == null && iceCream != null && Input.GetKey(KeyCode.E))
+        {
+            myIceCream = iceCream;
         }
     }
 
@@ -48,4 +45,5 @@ public class Isecreamhold : MonoBehaviour
     {
         if (other.CompareTag("Truff")) iceCream = null;
     }
+
 }

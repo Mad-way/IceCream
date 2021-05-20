@@ -6,7 +6,6 @@ public class Spavn : MonoBehaviour
 {
     public GameObject spawnPoint;
     public GameObject objToSpawn;
-
     void Start()
     {
         StartCoroutine(SpawnCD());
