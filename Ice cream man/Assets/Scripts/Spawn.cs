@@ -22,7 +22,7 @@ public class Spawn : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.tag == "Truff")
+        if (col.tag == "Truff" || col.tag == "BoxFroze" || col.tag == "IceCreams" || col.tag == "FinalBox")
         {
             StartCoroutine(SpawnCD());
         }

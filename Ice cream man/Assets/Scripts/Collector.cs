@@ -10,8 +10,8 @@ public class Collector : MonoBehaviour
     public int myNumber = 3;
     public Text myText;
 
-    public GameObject spawnPoint1;
-    public GameObject objToSpawn1;
+    public GameObject spawnPoint;
+    public GameObject objToSpawn;
     public bool anim;
     public GameObject animTest;
 
@@ -38,9 +38,9 @@ public class Collector : MonoBehaviour
     }
     IEnumerator SpawnCD()
     {
-        yield return new WaitForSeconds(2);
-        Vector2 pos1 = new Vector2(transform.position.x, transform.position.y);
-        Instantiate(objToSpawn1, spawnPoint1.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(1);
+        Vector2 pos = new Vector2(transform.position.x, transform.position.y);
+        Instantiate(objToSpawn, spawnPoint.transform.position, Quaternion.identity);
     }
     void OnTriggerEnter2D(Collider2D col)
     {

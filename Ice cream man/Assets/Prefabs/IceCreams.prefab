@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 779557948840966941}
   - component: {fileID: 1310494454825586233}
   m_Layer: 0
-  m_Name: orange
-  m_TagString: Truff
+  m_Name: IceCreams
+  m_TagString: IceCreams
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

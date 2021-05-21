@@ -8,9 +8,6 @@ public class Isecreamhold : MonoBehaviour
     public GameObject iceCream;
     public GameObject myIceCream;
 
-
-
-
     void Start()
     {
         myIceCream = null;
@@ -39,11 +36,11 @@ public class Isecreamhold : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Truff")) iceCream = other.gameObject;
+        if (other.CompareTag("Truff") || other.CompareTag("BoxFroze") || other.CompareTag("IceCreams") || other.CompareTag("FinalBox")) iceCream = other.gameObject;
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Truff")) iceCream = null;
+        if (other.CompareTag("Truff") || other.CompareTag("BoxFroze") || other.CompareTag("IceCreams") || other.CompareTag("FinalBox")) iceCream = null;
     }
 
 }
