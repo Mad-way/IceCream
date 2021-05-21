@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Collector3 : MonoBehaviour
+public class FinalCollector : MonoBehaviour
 {
     private bool flag = (true);
     public int thereIs = 0;
@@ -11,15 +11,15 @@ public class Collector3 : MonoBehaviour
     public Text myText;
     public int time = 6;
 
-    public GameObject spawnPoint;
-    public GameObject objToSpawn;
+    public GameObject final;
+
+
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -34,12 +34,7 @@ public class Collector3 : MonoBehaviour
             }
         }
     }
-    IEnumerator SpawnCD()
-    {
-        yield return new WaitForSeconds(time);
-        Vector2 pos = new Vector2(transform.position.x, transform.position.y);
-        Instantiate(objToSpawn, spawnPoint.transform.position, Quaternion.identity);
-    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "IceCreams" && Input.GetKey(KeyCode.F))
@@ -49,7 +44,7 @@ public class Collector3 : MonoBehaviour
             Destroy(col.gameObject);
             if (thereIs == 2)
             {
-                StartCoroutine(SpawnCD());
+                final.SetActive(true);
                 thereIs *= 0;
             }
         }

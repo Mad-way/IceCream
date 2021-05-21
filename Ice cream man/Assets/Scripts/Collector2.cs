@@ -9,6 +9,7 @@ public class Collector2 : MonoBehaviour
     public int thereIs = 0;
     public int myNumber = 3;
     public Text myText;
+    public int time = 10;
 
     public GameObject spawnPoint;
     public GameObject objToSpawn;
@@ -35,7 +36,7 @@ public class Collector2 : MonoBehaviour
     }
     IEnumerator SpawnCD()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(time);
         Vector2 pos = new Vector2(transform.position.x, transform.position.y);
         Instantiate(objToSpawn, spawnPoint.transform.position, Quaternion.identity);
     }
@@ -46,7 +47,7 @@ public class Collector2 : MonoBehaviour
 
             thereIs += 1;
             Destroy(col.gameObject);
-            if (thereIs == 3)
+            if (thereIs == 1)
             {
                 StartCoroutine(SpawnCD());
                 thereIs *= 0;

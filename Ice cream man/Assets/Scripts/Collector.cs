@@ -9,6 +9,7 @@ public class Collector : MonoBehaviour
     public int thereIs = 0;
     public int myNumber = 3;
     public Text myText;
+    public int time = 1;
 
     public GameObject spawnPoint;
     public GameObject objToSpawn;
@@ -38,7 +39,7 @@ public class Collector : MonoBehaviour
     }
     IEnumerator SpawnCD()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(time);
         Vector2 pos = new Vector2(transform.position.x, transform.position.y);
         Instantiate(objToSpawn, spawnPoint.transform.position, Quaternion.identity);
     }
