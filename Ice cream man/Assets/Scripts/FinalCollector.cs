@@ -37,7 +37,7 @@ public class FinalCollector : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "IceCreams" && Input.GetKey(KeyCode.F))
+        if (col.tag == "FinalBox" && Input.GetKey(KeyCode.F))
         {
 
             thereIs += 1;

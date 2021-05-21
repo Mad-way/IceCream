@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Exit2 : MonoBehaviour
 {
-    public void Scenes()
+    public void Final()
     {
         SceneManager.LoadScene(0);
     }
