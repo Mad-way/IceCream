@@ -18,11 +18,9 @@ public class Spawn : MonoBehaviour
         Instantiate(objToSpawn, spawnPoint.transform.position, Quaternion.identity);
     }
 
-
-
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.tag == "Truff" || col.tag == "BoxFroze" || col.tag == "IceCreams" || col.tag == "FinalBox")
+        if (col.tag == "Truff" || col.tag == "BoxFroze" || col.tag == "IceCreams")
         {
             StartCoroutine(SpawnCD());
         }

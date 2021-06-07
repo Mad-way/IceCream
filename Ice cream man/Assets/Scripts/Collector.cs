@@ -10,22 +10,9 @@ public class Collector : MonoBehaviour
     public int myNumber = 3;
     public Text myText;
     public int time = 1;
-
     public GameObject spawnPoint;
     public GameObject objToSpawn;
-    public bool anim;
-    public GameObject animTest;
 
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        anim = false;
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (flag)
@@ -52,8 +39,6 @@ public class Collector : MonoBehaviour
             Destroy(col.gameObject);
             if (thereIs == 3)
             {
-                animTest.GetComponent<Animator>().SetBool("123", true);
-                //animTest.GetComponent<Animator>().
                 StartCoroutine(SpawnCD());
                 thereIs *= 0;
             }

@@ -10,19 +10,9 @@ public class Collector3 : MonoBehaviour
     public int myNumber = 2;
     public Text myText;
     public int time = 6;
-
     public GameObject spawnPoint;
     public GameObject objToSpawn;
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (flag)
@@ -56,6 +46,4 @@ public class Collector3 : MonoBehaviour
 
 
     }
-
-
 }

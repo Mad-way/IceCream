@@ -10,19 +10,8 @@ public class FinalCollector : MonoBehaviour
     public int myNumber = 2;
     public Text myText;
     public int time = 6;
-
     public GameObject final;
 
-
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (flag)
@@ -48,9 +37,5 @@ public class FinalCollector : MonoBehaviour
                 thereIs *= 0;
             }
         }
-
-
     }
-
-
 }
